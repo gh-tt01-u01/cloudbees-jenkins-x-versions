@@ -17,6 +17,8 @@ export XDG_CONFIG_HOME=$JX_HOME
 
 mkdir -p $JX_HOME/git
 
+jx install dependencies --all
+
 jx --version
 # replace the credentials file with a single user entry
 echo "https://$GH_USERNAME:$GH_ACCESS_TOKEN@github.com" > $JX_HOME/git/credentials
@@ -63,7 +65,10 @@ cd next_js_bin
 wget $JX_DOWNLOAD_LOCATION
 tar -zxvf jx-linux-amd64.tar.gz
 export JX_UPGRADE_BIN_DIR=$(pwd)
+./jx install dependencies --all
 cd ..
+
+jx --version
 
 echo "Starting with binary from $PREVIOUS_JX_DOWNLOAD_LOCATION"
 echo "Upgrading using binary from $JX_DOWNLOAD_LOCATION"
