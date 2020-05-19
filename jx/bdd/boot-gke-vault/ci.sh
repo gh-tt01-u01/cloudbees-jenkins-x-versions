@@ -17,7 +17,6 @@ export XDG_CONFIG_HOME=$JX_HOME
 
 mkdir -p $JX_HOME/git
 
-jx --version
 # replace the credentials file with a single user entry
 echo "https://$GH_USERNAME:$GH_ACCESS_TOKEN@github.com" > $JX_HOME/git/credentials
 
@@ -54,6 +53,10 @@ JX_DOWNLOAD_LOCATION=$(<../jx/CJXD_LOCATION_LINUX)
 wget $JX_DOWNLOAD_LOCATION
 tar -zxvf jx-linux-amd64.tar.gz
 export PATH=$(pwd):$PATH
+
+jx install dependencies --all
+
+jx --version
 
 
 # use the current git SHA being built in the version stream
