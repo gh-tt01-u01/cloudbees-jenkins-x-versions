@@ -17,8 +17,6 @@ export XDG_CONFIG_HOME=$JX_HOME
 
 mkdir -p $JX_HOME/git
 
-jx install dependencies --all
-
 jx --version
 # replace the credentials file with a single user entry
 echo "https://$GH_USERNAME:$GH_ACCESS_TOKEN@github.com" > $JX_HOME/git/credentials
