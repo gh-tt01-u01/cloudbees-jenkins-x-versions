@@ -10,6 +10,8 @@ pipelineConfig:
             value: /secrets/bdd/sa.json
           - name: JX_REQUIREMENT_VAULT_DISABLE_URL_DISCOVERY
             value: "true"
+          - name: GOPROXY
+            value: http://jenkins-x-athens-proxy:80
           - name: GH_ACCESS_TOKEN 
             valueFrom:
               secretKeyRef:
